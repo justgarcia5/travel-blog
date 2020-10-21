@@ -29,12 +29,12 @@ jobs:
             bundle install --jobs=4 --retry=3 --path vendor/bundle
             yarn install
       - save_cache:
-          key: line-what-line-bundle-{{ checksum "Gemfile.lock" }}
+          key: travel-blog-bundle-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
       - save_cache:
-          key: line-what-line-yarn-{{ checksum "yarn.lock" }}
+          key: travel-blog-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.yarn-cache
 
@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Database Setup
           command: |
-            bundle exec rake db:prepare
+            bundle exec rake db:migrate
       # Linting
       - run: bundle exec rubocop --parallel
       - run: yarn lint
