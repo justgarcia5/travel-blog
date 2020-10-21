@@ -6,12 +6,6 @@
   justify-content: space-evenly;
 }
 
-@media screen and (max-width: 800px) {
-  .lb-row {
-    flex-direction: column!important;
-  }
-}
-
 .lb-col {
   text-align: center;
 }
@@ -48,4 +42,14 @@
 .pin {
   color: rgb(182, 18, 18);
   padding-right: 4px;
+}
+
+@media screen and (max-width: 800px) {
+  .lb-row {
+    flex-direction: column!important;
+  }
+
+  .lb-col {
+    margin: 26px;
+  }
 }

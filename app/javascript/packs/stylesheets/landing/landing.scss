@@ -1,0 +1,19 @@
+.landing-img {
+  width: 100%;
+  // height: 100vh;
+  filter: brightness(50%);
+}
+
+.logo {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .landing-img {
+    width: auto;
+    height: auto;
+    filter: brightness(50%);
+  }
+}
