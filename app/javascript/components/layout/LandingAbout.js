@@ -1,13 +1,13 @@
 import React from 'react'
 
-import NoImage from '../../packs/images/no-image.gif'
+import Angela from '../../packs/images/angela.jpeg'
 
 export default function LandingAbout() {
   return (
     <div className="landing_about_div">
       <div className="la-row">
         <div className="la-col s6">
-          <img src={NoImage} />
+          <img className="materialboxed" src={Angela} />
         </div>
         <div className="la-col s6">
           <h3>Something here</h3>
