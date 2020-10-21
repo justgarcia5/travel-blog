@@ -1,0 +1,71 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 72%;
+  margin: auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 86px;
+  background-color: transparent;
+  transform: translateY(0);
+  transition: transform 1.0s ease;
+}
+
+.header.shadow {
+  box-shadow: 0 9px 9px -9px rgba(0, 0, 0, 0.13);
+  background-color: rgba(255, 255, 255, 0.89);
+}
+
+.header.shadow ul a{
+  color: black;
+}
+
+.header.shadow .title {
+  color: black;
+  font-weight: bolder;
+}
+
+.header.hidden {
+  transform: translateY(-110%);
+}
+
+nav ul a {
+  color: white;
+  padding: 0 8px;
+}
+
+nav {
+  box-shadow: none;
+  padding-top: 16px;
+  z-index: 3;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.title-div {
+  padding: 18px 60px;
+  width: 80%;
+  margin: auto;
+}
+
+
+@media only screen and (min-width: 601px) {
+  .header.shadow a.sidenav-trigger i {
+      color: black;
+  }
+}
+
+.nav-links li a {
+  font-size: 14px;;
+}
