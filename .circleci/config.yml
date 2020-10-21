@@ -1,61 +1,55 @@
-ersion: 2
+version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/ruby:2.7.2
+      - image: circleci/ruby:2.7.2-node-browsers
         environment:
-          BUNDLE_JOBS: 3
-          BUNDLE_RETRY: 3
-          BUNDLE_PATH: vendor/bundle
           RAILS_ENV: test
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
-
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+      - image: circleci/postgres:10.3-alpine
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
     steps:
       - checkout
-      # Download and cache dependencies
+
+      # Cache Restoration
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - travel-blog-{{ checksum "Gemfile.lock" }}
+            - travel-blog-
 
-      - run:
-          name: Configure Bundler
-          command: |
-            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-            source $BASH_ENV
-            gem install bundler
+      # Update Dependencies
+      # - run: bundle install --path vendor/bundle
       - run:
           name: install dependencies
           command: |
+            gem install bundler -v 2.1.4
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            yarn install
       - save_cache:
+          key: line-what-line-bundle-{{ checksum "Gemfile.lock" }}
           paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - vendor/bundle
 
-      # run tests!
+      - save_cache:
+          key: line-what-line-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.yarn-cache
+
+      # Setup script
       - run:
-          name: run tests
+          name: Database Setup
           command: |
-            mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-              circleci tests split --split-by=timings)"
-            bundle exec rspec \
-              --format progress \
-              --format RspecJunitFormatter \
-              --out /tmp/test-results/rspec.xml \
-              --format progress \
-              $TEST_FILES
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
+            bundle exec rake db:prepare
+      # Linting
+      - run: bundle exec rubocop --parallel
+      - run: yarn lint
+
+      # Run tests
+      - run: bundle exec rspec
+      - run: yarn test:ci
+
       - store_artifacts:
-          path: /tmp/test-results
+          path: tmp/screenshot/s
