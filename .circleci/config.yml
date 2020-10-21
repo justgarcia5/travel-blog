@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Database Setup
           command: |
-            bundle exec rake db:setup
+            bundle exec rake db:create
       # Linting
       - run: bundle exec rubocop --parallel
       - run: yarn lint
