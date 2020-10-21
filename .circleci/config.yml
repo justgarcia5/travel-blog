@@ -43,9 +43,10 @@ jobs:
           name: Database Setup
           command: |
             bundle exec rake db:create
+            bundle exec rake db:migrate
       # Linting
-      - run: bundle exec rubocop --parallel
-      - run: yarn lint
+      # - run: bundle exec rubocop --parallel
+      # - run: yarn lint
 
       # Run tests
       - run: bundle exec rspec
