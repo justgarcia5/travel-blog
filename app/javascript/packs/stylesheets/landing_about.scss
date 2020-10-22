@@ -1,16 +1,14 @@
 .landing_about_div {
   margin: auto;
   padding: 200px 0;
-  background: url("../images/rmbw.jpeg") no-repeat;
+  background: url("../images/baw.jpg") no-repeat;
   background-size: 100%;
-
 }
 
 .la-row {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  // width: 83px;
   padding: 0 55px;
 }
 
@@ -23,15 +21,35 @@
   text-align: center;
   color: rgb(0, 0, 0);
   padding: 0 40px;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bolder;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .la-row {
     flex-direction: column!important;
     background-color: rgb(218, 218, 218);
     background: none;
+  }
+  .landing_about_div {
+    padding: 50px 0 20px 0;
+  }
 
+  .landing_about_div img {
+    margin: auto;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+
+  .la-col {
+    padding: 0;
+  }
+
+  .la-col h3 {
+    font-size: 26px;
+  }
+
+  .la-col p {
+    font-size: 12px;
   }
 }

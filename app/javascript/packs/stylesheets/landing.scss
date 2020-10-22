@@ -1,11 +1,22 @@
 .landing-img {
-  // width: 100%;
-  height: 100vh;
+  width: 100%;
   filter: brightness(50%);
 }
 
 .logo {
   z-index: 3;
-  position: absolute;
-  top: 0;
+  background-color: transparent;
+}
+
+.logo2 {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .logo2 {
+    display: flex;
+    margin: auto;
+    color: black;
+    width: 90%
+  }
 }

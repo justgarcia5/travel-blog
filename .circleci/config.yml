@@ -47,7 +47,6 @@ jobs:
       # Linting
       # - run: bundle exec rubocop --parallel
       # - run: yarn lint
-
       # Run tests
       # - run: bundle exec rspec
       # - run: yarn test:ci
