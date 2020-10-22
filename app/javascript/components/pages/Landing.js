@@ -4,14 +4,14 @@ import LandingBlogs from '../layout/LandingBlogs'
 import LandingAbout from '../layout/LandingAbout'
 
 import Pear from '../../packs/images/woman.jpg'
-import Logo from '../../packs/images/logo.png'
+import Logo from '../../packs/images/logo2.png'
 import LandingNationalParks from '../layout/LandingNationalParks'
 
 export default function Landing() {
   return (
     <div>
+      <img className="logo" src={Logo} />
       <img className="landing-img" src={Pear} />
-      {/* <img className="logo" src={Logo} /> */}
       <LandingBlogs />
       <LandingAbout />
       <LandingNationalParks />
