@@ -20,14 +20,13 @@ export default function LandingNationalParks() {
   useEffect(() => {
     var elems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(elems, {})
-    console.log(OverlayTrigger)
   },[])
 
   const popover = (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Popover right</Popover.Title>
       <Popover.Content>
-        <p><i className="pin fas fa-map-pin"></i> Yosemite National Park</p>
+        <p><i className="pin fas fa-map-pin"></i>Yosemite National Park</p>
       </Popover.Content>
     </Popover>
   );
