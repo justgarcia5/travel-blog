@@ -6,6 +6,7 @@
 @import 'landing_blogs.scss';
 @import 'landing_about.scss';
 @import 'landing_national_parks.scss';
+@import 'form.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
@@ -13,4 +14,8 @@
 * {
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
+}
+
+a:link {
+  text-decoration: none;
 }
