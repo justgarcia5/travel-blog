@@ -1,29 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-import PearLake from '../../packs/images/pearlake.jpg'
-import Yosemite from '../../packs/images/yosemite.jpg'
-import Cusco from '../../packs/images/cusco.jpg'
+export default function About(props) {
 
-
-export default function About() {
   return (
     <div className="landing_blogs_div">
       <h3>Latest adventures</h3>
       <div className="lb-row">
-        <div className="lb-col s4">
-          <img className="responsive-img" src={PearLake} />
-          <p><i className="pin fas fa-map-pin"></i> Pear Lake</p>
-          <i>Sequoia National Park</i>
-        </div>
-        <div className="lb-col s4">
-          <img className="responsive-img" src={Yosemite} />
-          <p><i className="pin fas fa-map-pin"></i> Nevada Falls</p>
-          <i>Yosemite National Park</i>
-        </div>
-        <div className="lb-col s4">
-          <img className="responsive-img" src={Cusco} />
-          <p><i className="pin fas fa-map-pin"></i> Cusco, Peru</p>
-        </div>
+        {props.posts.reverse().map((post, index) => {
+          console.log(post)
+          if(index <= 2) {
+            return(
+              <div className="lb-col s4" key={index}>
+                <img className="responsive-img" src={post.image_url} alt="national parks"/>
+                <p><i className="pin fas fa-map-pin"></i>{post.title}</p>
+                <i>{post.location}</i>
+              </div>
+            )
+          }
+        })}
       </div>
     </div>
   )

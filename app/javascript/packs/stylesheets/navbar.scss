@@ -38,6 +38,10 @@ nav ul a {
   padding: 0 8px;
 }
 
+a:hover {
+  color: white;
+}
+
 nav {
   box-shadow: none;
   padding-top: 16px;
@@ -74,6 +78,10 @@ nav {
   }
 
   nav ul a {
+    color: black;
+  }
+
+  a:hover {
     color: black;
   }
 
