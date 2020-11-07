@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Popover,
   OverlayTrigger
@@ -11,25 +11,28 @@ import {
   Marker,
 } from "react-simple-maps"
 
-// url to a valid topojson file
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
 
-export default function LandingNationalParks() {
+export default function LandingNationalParks(props) {
+
 
   useEffect(() => {
     var elems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(elems, {})
   },[])
 
-  const popover = (
-    <Popover id="popover-basic">
-      <Popover.Title as="h3">Popover right</Popover.Title>
-      <Popover.Content>
-        <p><i className="pin fas fa-map-pin"></i>Yosemite National Park</p>
-      </Popover.Content>
-    </Popover>
-  );
+  const popover = (title, location) => {
+    return (
+      <Popover id="popover-basic" transition="true">
+        <Popover.Title as="h3">{title}</Popover.Title>
+        <Popover.Content>
+          <p><i className="pin fas fa-map-pin"></i>{location}</p>
+        </Popover.Content>
+      </Popover>
+    )
+
+  };
 
   return (
     <div className="landing_np_div">
@@ -47,39 +50,17 @@ export default function LandingNationalParks() {
             ))
           }
         </Geographies>
-        <OverlayTrigger trigger={["hover", "focus", "click"]} placement="right" overlay={popover}>
-          <a className="btn tooltipped" variant="success">
-            <Marker coordinates={[-119.5383, 37.8651]}>
-              <circle r={6} fill="#F53" />
-            </Marker>
-          </a>
-        </OverlayTrigger>
-        <a className="btn tooltipped" data-position="bottom" data-tooltip="Yosemite National Park">
-          <Marker coordinates={[-118.5658, 36.4864]}>
-            <circle r={6} fill="#F53" />
-          </Marker>
-        </a>
-        <a className="btn tooltipped" data-position="bottom" data-tooltip="Yosemite National Park">
-          <Marker coordinates={[-112.1871, 37.5930]}>
-            <circle r={6} fill="#F53" />
-          </Marker>
-        </a>
-        <a className="btn tooltipped" data-position="bottom" data-tooltip="Yosemite National Park">
-          <Marker coordinates={[-113.0263, 37.2982]}>
-            <circle r={6} fill="#F53" />
-          </Marker>
-        </a>
-        <a className="btn tooltipped" data-position="bottom" data-tooltip="Yosemite National Park">
-          <Marker coordinates={[-110.5885, 44.4280]}>
-            <circle r={6} fill="#F53" />
-          </Marker>
-        </a>
-        <a className="btn tooltipped" data-position="bottom" data-tooltip="Yosemite National Park">
-          <Marker coordinates={[-119.42, 34.01]}>
-            <circle r={6} fill="#F53" />
-            {/* <p><i className="pin fas fa-map-pin"></i></p> */}
-          </Marker>
-        </a>
+        {props.posts.map((post, index) => {
+          return(
+            <OverlayTrigger trigger={["click", "focus"]} placement="right" overlay={popover(post.title, post.location)} rootClose key={index} >
+              <a className="btn tooltipped" variant="success">
+                <Marker coordinates={[post.longitude, post.latitude]}>
+                  <circle r={6} fill="#F53" />
+                </Marker>
+              </a>
+            </OverlayTrigger>
+          )
+        })}
       </ComposableMap>
     </div>
   )

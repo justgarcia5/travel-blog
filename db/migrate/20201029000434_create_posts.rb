@@ -5,8 +5,8 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.text :body
       t.string :miles
       t.string :location
-      t.integer :latitude
-      t.integer :longitude
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end
