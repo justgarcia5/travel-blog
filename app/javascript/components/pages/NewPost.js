@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 import Dropzone from "react-dropzone";
 
+import Form from '../layout/Form'
+
 export default function NewPost() {
   // const form = useRef(null)
   const [responseOk, setResponseOk] = useState(null)
@@ -56,6 +58,7 @@ export default function NewPost() {
       <Form
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        responseOk={responseOk}
       />
     </div>
   )

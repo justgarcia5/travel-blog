@@ -4,7 +4,7 @@ export default function Form(props) {
   return (
     <div>
       <div className="top_padding"/>
-      { responseOk && <Redirect to="/" /> }
+      { props.responseOk && <Redirect to="/" /> }
       <div className="row container form_row">
         <form className="col s12" onSubmit={props.handleSubmit} encType="multipart/form-data">
           <div className="row">

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :find_post, only: %i[update]
+  before_action :find_post, only: %i[update show]
 
   def index
     @posts = Post.all
@@ -23,6 +23,8 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def show;end
 
   def update
     if @post.update(post_params)

@@ -11,9 +11,11 @@ export default function About(props) {
           if(index <= 2) {
             return(
               <div className="lb-col s4" key={index}>
-                <img className="responsive-img" src={post.image_url} alt="national parks"/>
-                <p><i className="pin fas fa-map-pin"></i>{post.title}</p>
-                <i>{post.location}</i>
+                <a href={`post/${post.id}`} className='link_to_blog'>
+                  <img className="responsive-img" src={post.image_url} alt="national parks"/>
+                  <p><i className="pin fas fa-map-pin"></i>{post.title}</p>
+                  <i>{post.location}</i>
+                </a>
               </div>
             )
           }
