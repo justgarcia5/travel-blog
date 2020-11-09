@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-import LandingBlogs from '../layout/LandingBlogs'
-import LandingAbout from '../layout/LandingAbout'
+import LandingBlogs from '../components/layout/LandingBlogs'
+import LandingAbout from '../components/layout/LandingAbout'
 
 import Camping from '../../packs/images/camping.jpg'
 import Logo1 from '../../packs/images/logo.png'
 import Logo2 from '../../packs/images/logo2.png'
-import LandingNationalParks from '../layout/LandingNationalParks'
+import LandingNationalParks from '../components/layout/LandingNationalParks'
 
 export default function Landing() {
   const [posts, setPosts] = useState([]);

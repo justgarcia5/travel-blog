@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Landing from '../pages/Landing';
-import Form from '../pages/Form';
+import NewPost from '../pages/NewPost';
 
 export default function Routes() {
 
@@ -15,7 +15,7 @@ export default function Routes() {
       <Router>
         <Switch>
           <Route path='/' exact component={Landing} />
-          <Route path='/form' exact component={Form} />
+          <Route path='/NewPost' exact component={NewPost} />
         </Switch>
       </Router>
     </div>
