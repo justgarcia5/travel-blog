@@ -35,8 +35,32 @@ export default function Form(props) {
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <textarea id="body" type="text" className="materialize-textarea" name="body" onChange={props.handleChange}/>
-              <label htmlFor="body">Post</label>
+              <textarea id="body1" type="text" className="materialize-textarea" name="body1" onChange={props.handleChange}/>
+              <label htmlFor="body1">Body1</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <textarea id="body2" type="text" className="materialize-textarea" name="body2" onChange={props.handleChange}/>
+              <label htmlFor="body2">Body2</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <textarea id="body3" type="text" className="materialize-textarea" name="body3" onChange={props.handleChange}/>
+              <label htmlFor="body3">Body3</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <textarea id="body4" type="text" className="materialize-textarea" name="body4" onChange={props.handleChange}/>
+              <label htmlFor="body4">Body4</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <textarea id="body5" type="text" className="materialize-textarea" name="body5" onChange={props.handleChange}/>
+              <label htmlFor="body5">Body5</label>
             </div>
           </div>
 

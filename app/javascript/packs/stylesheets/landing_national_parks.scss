@@ -17,6 +17,15 @@
   text-decoration: none;
 }
 
+#popover-basic a {
+ color: black;
+ text-decoration: none;
+}
+
+#popover-basic a:hover {
+ color: black;
+}
+
 @media screen and (max-width: 800px) {
   .landing_np_div h3 {
     font-size: 26px;

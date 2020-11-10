@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import LandingPosts from '../layout/LandingPosts'
 import LandingAbout from '../layout/LandingAbout'
+import Insta from '../layout/Insta'
 
 import Camping from '../../packs/images/camping.jpg'
 import Logo1 from '../../packs/images/logo.png'
@@ -22,6 +23,7 @@ export default function Landing() {
       <LandingPosts posts={posts} />
       <LandingAbout />
       <LandingNationalParks posts={posts} />
+      <Insta />
     </div>
   )
 }
