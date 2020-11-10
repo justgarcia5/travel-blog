@@ -6,10 +6,15 @@
 
 .landing_np_div h3 {
   margin: 100px 0;
+  text-transform: uppercase;
 }
 
 .map-pin {
   font-size: 22px;
+}
+
+.geographies {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {

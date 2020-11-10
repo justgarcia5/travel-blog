@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 export default function Post(props) {
   const [post, setPost] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const isMounted = useRef(false);
 
   useEffect(() => {
     fetchData();
@@ -13,16 +15,19 @@ export default function Post(props) {
       .json()
       .then(post => setPost(post))
       .catch(err => console.log(err));
+      return () => isMounted.current = true;
   }
 
   return (
     <div>
       {post &&
         <div>
-          <img src={post.image_url} />
-          <h2>{post.title}</h2>
-          <h3>{post.location}</h3>
-          <p>{post.body}</p>
+          <img src={post.image_url} className='post_landing_image'/>
+          <div className='post container center'>
+            <h1>{post.title}</h1>
+            <h2>{post.location}</h2>
+            <p>{post.body}</p>
+          </div>
         </div>
       }
     </div>
