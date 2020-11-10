@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :find_post, only: %i[update]
+  before_action :find_post, only: %i[update show]
 
   def index
     @posts = Post.all
@@ -24,6 +24,8 @@ class PostsController < ApplicationController
     end
   end
 
+  def show;end
+
   def update
     if @post.update(post_params)
       redirect_to @posts
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :miles, :location, :latitude, :longitude, images: [])
+    params.require(:post).permit(:title, :body, :miles, :location, :latitude, :longitude, :body1, :body2, :body3, :body4, :body5, images: [])
   end
 
   def find_post

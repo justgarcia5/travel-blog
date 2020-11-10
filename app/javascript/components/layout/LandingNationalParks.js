@@ -22,12 +22,12 @@ export default function LandingNationalParks(props) {
     M.Tooltip.init(elems, {})
   },[])
 
-  const popover = (title, location) => {
+  const popover = (title, location, post) => {
     return (
       <Popover id="popover-basic" transition="true">
         <Popover.Title as="h3">{title}</Popover.Title>
         <Popover.Content>
-          <p><i className="pin fas fa-map-pin"></i>{location}</p>
+          <a href={`post/${post}`} className='link_to_blog'><p><i className="pin fas fa-map-pin"></i>{location}</p></a>
         </Popover.Content>
       </Popover>
     )
@@ -38,7 +38,7 @@ export default function LandingNationalParks(props) {
     <div className="landing_np_div">
       <h3>National Parks Ranked</h3>
       <ComposableMap projection="geoAlbers">
-        <Geographies geography={geoUrl}>
+        <Geographies geography={geoUrl} className='geographies'>
           {({ geographies }) =>
             geographies.map(geo => (
               <Geography
@@ -52,7 +52,7 @@ export default function LandingNationalParks(props) {
         </Geographies>
         {props.posts.map((post, index) => {
           return(
-            <OverlayTrigger trigger={["click", "focus"]} placement="right" overlay={popover(post.title, post.location)} rootClose key={index} >
+            <OverlayTrigger trigger={["click", "focus"]} placement="right" overlay={popover(post.title, post.location, post.id)} rootClose key={index} >
               <a className="btn tooltipped" variant="success">
                 <Marker coordinates={[post.longitude, post.latitude]}>
                   <circle r={6} fill="#F53" />

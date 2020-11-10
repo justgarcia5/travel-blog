@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import LandingBlogs from '../layout/LandingBlogs'
+import LandingPosts from '../layout/LandingPosts'
 import LandingAbout from '../layout/LandingAbout'
+import Insta from '../layout/Insta'
 
 import Camping from '../../packs/images/camping.jpg'
 import Logo1 from '../../packs/images/logo.png'
@@ -16,13 +17,13 @@ export default function Landing() {
 
   return (
     <div>
-      {/* <img className="logo" src={Logo1} /> */}
-      <img className="logo2" src={Logo2} />
-
       <img className="landing-img" src={Camping} />
-      <LandingBlogs posts={posts} />
+      <img className="logo2" src={Logo2} />
+      {/* <img className="logo" src={Logo1} /> */}
+      <LandingPosts posts={posts} />
       <LandingAbout />
       <LandingNationalParks posts={posts} />
+      <Insta />
     </div>
   )
 }
