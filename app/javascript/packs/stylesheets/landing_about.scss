@@ -1,7 +1,7 @@
 .landing_about_div {
   margin: auto;
   padding: 200px 0;
-  background: url("../images/baw.jpg") no-repeat;
+  background: url("../images/dock.jpg") no-repeat;
   background-size: 100%;
 }
 
@@ -32,6 +32,10 @@
   padding: 0 40px;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.about_text_bg {
+  background-color: rgba(255, 255, 255, 0.404);
 }
 
 @media (max-width: 800px) {

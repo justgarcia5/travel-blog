@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Angela from '../../packs/images/angela.jpeg'
+import Angela from '../../packs/images/profile.jpeg'
 
 export default function LandingAbout() {
   return (
@@ -9,7 +9,7 @@ export default function LandingAbout() {
         <div className="la-col s6">
           <img className="materialboxed" src={Angela} />
         </div>
-        <div className="la-col s6">
+        <div className="about_text_bg la-col s6">
           <h3>Something here</h3>
           <br/>
           <b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></b>
