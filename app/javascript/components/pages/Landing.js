@@ -21,8 +21,8 @@ export default function Landing() {
       <img className="logo2" src={Logo2} />
       {/* <img className="logo" src={Logo1} /> */}
       <LandingPosts posts={posts} />
-      <LandingAbout />
       <LandingNationalParks posts={posts} />
+      <LandingAbout />
       <Insta />
     </div>
   )

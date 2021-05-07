@@ -36,7 +36,7 @@ export default function LandingNationalParks(props) {
 
   return (
     <div className="landing_np_div">
-      <h3>National Parks Ranked</h3>
+      <h1>National Parks</h1>
       <ComposableMap projection="geoAlbers">
         <Geographies geography={geoUrl} className='geographies'>
           {({ geographies }) =>
