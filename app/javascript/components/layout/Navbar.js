@@ -39,7 +39,7 @@ export default function Navbar() {
       <nav className={`header ${shadowStyle} ${hiddenStyle}`}>
         <div className="nav-wrapper">
           <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-          <a href="/" className='title' >Adventures with Angela</a>
+          <a href="/" className='title' >GelaVentures</a>
           <ul className="nav-links hide-on-med-and-down center">
             <li><a href="sass.html">Locations</a></li>
             <li><a href="sass.html">Life Style</a></li>

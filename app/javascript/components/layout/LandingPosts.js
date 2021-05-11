@@ -7,7 +7,6 @@ export default function LandingPosts(props) {
       <h3>Latest adventures</h3>
       <div className="lb-row">
         {props.posts.reverse().map((post, index) => {
-          console.log(post)
           if(index <= 2) {
             return(
               <div className="lb-col s4" key={index}>
