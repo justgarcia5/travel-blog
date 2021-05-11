@@ -4,8 +4,6 @@ import LandingPosts from '../layout/LandingPosts'
 import LandingAbout from '../layout/LandingAbout'
 import Insta from '../layout/Insta'
 
-const dotenv = require('dotenv').config();
-
 import Camping from '../../packs/images/camping.jpg'
 import LandingNationalParks from '../layout/LandingNationalParks'
 
