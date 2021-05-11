@@ -1,22 +1,48 @@
-import React from 'react'
-import InstagramEmbed from 'react-instagram-embed';
+import React, { useState, useEffect, useRef } from 'react'
+import axios from 'axios'
 
-export default function Insta() {
-  return (
-    <div>
-      <InstagramEmbed
-        url='https://instagr.am/p/Zw9o4/'
-        clientAccessToken='123|456'
-        maxWidth={320}
-        hideCaption={false}
-        containerTagName='div'
-        protocol=''
-        injectScript
-        onLoading={() => {}}
-        onSuccess={() => {}}
-        onAfterRender={() => {}}
-        onFailure={() => {}}
-      />
-    </div>
-  )
+import Feed from './Feed'
+
+const Insta = ({...props}) => {
+    const [feeds, setFeedsData] = useState([])
+    //use useRef to store the latest value of the prop without firing the effect
+    const tokenProp = useRef(props.instaToken);
+    tokenProp.current = props.instaToken;
+
+    useEffect(() => {
+        // this is to avoid memory leaks
+        const abortController = new AbortController();
+
+        async function fetchInstagramPost () {
+          try{
+            axios
+                .get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${props.instaToken}`)
+                .then((resp) => {
+                    setFeedsData(resp.data.data)
+                })
+          } catch (err) {
+              console.log('error', err)
+          }
+        }
+        
+        fetchInstagramPost();
+  
+        return () => {
+            // cancel pending fetch request on component unmount
+            abortController.abort(); 
+        };
+    }, [props.limit])
+
+    return (
+      <div className="insta-div">
+        <h3>Instagram</h3>
+        <div className="feed-div">
+          {feeds.map((feed) => (
+            <Feed key={feed.id} feed={feed} />
+          ))}
+        </div>
+      </div>
+    );
 }
+
+export default Insta;

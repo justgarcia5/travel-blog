@@ -1,0 +1,28 @@
+.feed-div {
+    display: flex;
+    overflow: scroll;
+    margin: 100px 0;
+    text-align: center;
+}
+
+.feed-div img {
+    height: 360px;;
+    width: 300px;;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.feed-div p {
+    margin: 10px;
+    width: 300px;
+    font-size: 12px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.feed-div hr {
+    width: 88%;
+    background-color: grey;
+}

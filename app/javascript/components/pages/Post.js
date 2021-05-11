@@ -34,7 +34,7 @@ export default function Post(props) {
   return (
     <div>
       {post &&
-        <div>
+        <div className='post'>
           <img src={post.image_url} className='post_landing_image'/>
           <div className='post container center'>
             <h1>{post.title}</h1>
