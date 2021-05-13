@@ -2,8 +2,15 @@
     text-align: center;
 }
 
-.insta-div h3 {
+.insta-div h1 {
     text-transform: uppercase;
     margin-top: 120px;
-    font-size: 43px;
+    font-size: 70px;
+    font-family: 'Amatic SC', cursive;
   }
+
+.instagram {
+    border-radius: 20px;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);    
+}

@@ -25,10 +25,10 @@ export default function LandingNationalParks(props) {
   const popover = (title, location, post) => {
     return (
       <Popover id="popover-basic" transition="true">
-        <Popover.Title as="h3">{title}</Popover.Title>
-        <Popover.Content>
+        <Popover.Title as="h2"><a href={`post/${post}`} className='link_to_blog'><p><i className="pin fas fa-map-pin"></i>{location}</p></a></Popover.Title>
+        {/* <Popover.Content>
           <a href={`post/${post}`} className='link_to_blog'><p><i className="pin fas fa-map-pin"></i>{location}</p></a>
-        </Popover.Content>
+        </Popover.Content> */}
       </Popover>
     )
 

@@ -5,6 +5,8 @@
 import 'bootstrap'
 import 'materialize-css/dist/js/materialize'
 import "@fortawesome/fontawesome-free/js/all";
+// import "@fortawesome/fontawesome-free-solid-svg-icons/js/all";
+// import "@fortawesome/react-fontawesome/js/all";
 import './stylesheets/application'
 
 require("@rails/ujs").start()

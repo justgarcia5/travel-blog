@@ -8,11 +8,12 @@
 .landing_about_div h3 {
   text-transform: uppercase;
   margin-top: 120px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
 }
 
 .landing_about_div img {
   width: 400px;
-  // border-radius: 2%;
   box-shadow: inset -1px 1px 7px rgba(0, 0, 0, 0.2),
     inset 1px -1px 7px rgba(0, 0, 0, 0.2), 1px 12px 5px rgba(0, 0, 0, 0.4),
     4px 3px 8px rgba(0, 0, 0, 0.4), 5px 10px 10px rgba(0, 0, 0, 0.2),

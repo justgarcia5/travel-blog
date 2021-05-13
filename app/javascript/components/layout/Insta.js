@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Feed from './Feed'
 
@@ -35,7 +36,7 @@ const Insta = ({...props}) => {
 
     return (
       <div className="insta-div">
-        <h3>Instagram</h3>
+        <h1>Instagram  <FontAwesomeIcon icon={['fab', 'instagram']} className="instagram"/></h1>
         <div className="feed-div">
           {feeds.map((feed) => (
             <Feed key={feed.id} feed={feed} />
