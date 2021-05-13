@@ -1,11 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTree } from '@fortawesome/free-solid-svg-icons'
+
+import PostsBg from '../../packs/images/gela-posts-bg.png'
 
 export default function LandingPosts(props) {
 
   return (
     <div className="landing_posts_div">
-      <h1><FontAwesomeIcon icon={['fas', 'fa-tree']}/> Latest adventures <FontAwesomeIcon icon={['fas', 'fa-tree']}/></h1>
+      <img src={PostsBg} className="posts-bg" alt="veiw of mountains" />
+      <h1>Latest adventures <FontAwesomeIcon icon={faTree}/></h1>
       <div className="lb-row">
         {props.posts.reverse().map((post, index) => {
           if(index <= 2) {

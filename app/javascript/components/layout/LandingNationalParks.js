@@ -4,12 +4,19 @@ import {
   OverlayTrigger
 } from 'react-bootstrap'
 
+
 import {
   ComposableMap,
   Geographies,
   Geography,
   Marker,
 } from "react-simple-maps"
+
+import Mountains from '../../packs/images/mtn.gif'
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMountain } from '@fortawesome/free-solid-svg-icons'
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
@@ -36,7 +43,8 @@ export default function LandingNationalParks(props) {
 
   return (
     <div className="landing_np_div">
-      <h1>National Parks</h1>
+      <img src={Mountains} alt="mountains"/>
+      <h1>National Parks <FontAwesomeIcon icon={faMountain}/></h1>
       <ComposableMap projection="geoAlbers">
         <Geographies geography={geoUrl} className='geographies'>
           {({ geographies }) =>

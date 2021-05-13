@@ -1,9 +1,14 @@
 .landing_posts_div {
-  // margin: 180px 0;
+  margin: 10px 0;
+}
+
+.posts-bg {
+  z-index: -3;
+  position: absolute;
 }
 
 .landing_posts_div h1 {
-  padding-top: 124px;
+  padding-top: 154px;
   padding-bottom: 63px;
   font-size: 70px;
   font-weight: lighter;
@@ -21,6 +26,7 @@
 }
 
 .lb-col {
+  background-color: white;
   text-align: center;
   padding: 43px 14px;
   // width: 660px;
