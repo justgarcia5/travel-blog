@@ -2,6 +2,7 @@
     text-align: center;
     background-color: honeydew;
     padding: 140px 0;;
+    margin: 100px 0;
 }
 
 .insta-div h1 {
@@ -14,4 +15,33 @@
     border-radius: 20px;
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
     background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);    
+}
+
+.feed-div {
+    display: flex;
+    overflow-x: auto;
+    margin: 100px 0;
+    justify-content: center;
+}
+
+.feed-div img {
+    height: 360px;;
+    width: 300px;;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.feed-div p {
+    margin: 10px;
+    width: 300px;
+    font-size: 12px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.feed-div hr {
+    width: 88%;
+    background-color: grey;
 }

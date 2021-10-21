@@ -15,7 +15,7 @@ export default function Routes(props) {
     <div>
       <Router>
         <Switch>
-          <Route path='/' exact component={() => <Landing instaToken={ props.insta_token } />} />
+          <Route path='/' exact component={() => <Landing instaToken={ props.access_token } />} />
           <Route path='/newpost' exact component={NewPost} />
           <Route path='/post/:id' exact render={props => <Post {...props} />} />
         </Switch>

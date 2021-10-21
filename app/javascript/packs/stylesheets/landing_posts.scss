@@ -1,10 +1,15 @@
 .landing_posts_div {
-  margin: 10px 0;
+  margin: 100px 0;
 }
 
 .posts-bg {
-  z-index: -3;
   position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: -1;
+
 }
 
 .landing_posts_div h1 {

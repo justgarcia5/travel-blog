@@ -63,7 +63,7 @@ export default function LandingNationalParks(props) {
             <OverlayTrigger trigger={["click", "focus"]} placement="right" overlay={popover(post.title, post.location, post.id)} rootClose key={index} >
               <a className="btn tooltipped" variant="success">
                 <Marker coordinates={[post.longitude, post.latitude]}>
-                  <circle r={6} fill="#F53" />
+                  <circle r={4} fill="#F53" />
                 </Marker>
               </a>
             </OverlayTrigger>
