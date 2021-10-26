@@ -22,8 +22,6 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
 
 export default function LandingNationalParks(props) {
-
-
   useEffect(() => {
     var elems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(elems, {})
@@ -38,7 +36,6 @@ export default function LandingNationalParks(props) {
         </Popover.Content> */}
       </Popover>
     )
-
   };
 
   return (
@@ -73,4 +70,3 @@ export default function LandingNationalParks(props) {
     </div>
   )
 }
-
