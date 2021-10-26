@@ -4,7 +4,7 @@ import LandingPosts from '../layout/LandingPosts'
 import LandingAbout from '../layout/LandingAbout'
 import Insta from '../instagramApi/Insta'
 
-import Camping from '../../packs/images/camping.jpg'
+import AngelaCover from '../../packs/images/cover.jpeg'
 import LandingNationalParks from '../layout/LandingNationalParks'
 
 export default function Landing(props) {
@@ -16,7 +16,7 @@ export default function Landing(props) {
 
   return (
     <div>
-      <img className="landing-img" src={Camping} />
+      <img className="landing-img" src={AngelaCover} />
       <LandingPosts posts={posts} />
       <LandingNationalParks posts={posts} />
       <LandingAbout />
