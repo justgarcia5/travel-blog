@@ -8,9 +8,9 @@ const Feed = (props) => {
         case "VIDEO":
             post = (
                 <div>
-                    <video 
-                        src={media_url} 
-                        type="video/mp4" 
+                    <video
+                        src={media_url}
+                        type="video/mp4"
                         controls playsInline>
                     </video>
                     <hr/>
@@ -21,10 +21,10 @@ const Feed = (props) => {
         case "CAROUSEL_ALBUM":
             post = (
                 <div>
-                    <img 
-                        id={id} 
-                        src={media_url} 
-                        alt={caption} 
+                    <img
+                        id={id}
+                        src={media_url}
+                        alt={caption}
                     />
                     <hr/>
                     <p className="caption">{caption}</p>
@@ -34,16 +34,16 @@ const Feed = (props) => {
         default:
             post = (
                 <div>
-                    <img 
-                        id={id} 
-                        src={media_url} 
-                        alt={caption} 
+                    <img
+                        id={id}
+                        src={media_url}
+                        alt={caption}
                     />
                     <hr/>
                     <p className="caption">{caption}</p>
                 </div>
             );
-    }       
+    }
 
     return post
 }
