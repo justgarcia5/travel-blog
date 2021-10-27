@@ -40,7 +40,9 @@ export default function LandingNationalParks(props) {
 
   return (
     <div className="landing_np_div">
-      <img src={Mountains} alt="mountains"/>
+      <div className="landing_np_img_div">
+        <img src={Mountains} alt="mountains"/>
+      </div>
       <h1>National Parks <FontAwesomeIcon icon={faMountain}/></h1>
       <ComposableMap projection="geoAlbers">
         <Geographies geography={geoUrl} className='geographies'>

@@ -11,7 +11,11 @@ export default function Landing(props) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('/posts.json').then(res => res.json()).then(posts => setPosts(posts))
+    let isMounted = false;
+    fetch('/posts.json').then(res => res.json()).then(posts => {
+      if(!isMounted) setPosts(posts)
+    })
+    return () => isMounted = true;
   },[]);
 
   return (
