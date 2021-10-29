@@ -1,34 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Post(props) {
   const [post, setPost] = useState(null);
-  const isMounted = useRef(false);
+  const [visible, setVisible] = useState(true);
+  const [body, setBody] = useState("");
+
 
   useEffect(() => {
+    let cancel = false;
+
+    async function fetchData() {
+      const res = await fetch(`/posts/${props.match.params.id}.json`);
+      res
+        .json()
+        .then(post => {
+          if(cancel) return;
+          setPost(post);
+          setBody(textFormatter(post.body))
+          setVisible(false);
+        })
+        .catch(err => console.log(err))
+    }
+
     fetchData();
+    return () => cancel = true;
   },[])
 
-  async function fetchData() {
-    const res = await fetch(`/posts/${props.match.params.id}.json`)
-    res
-      .json()
-      .then(post => setPost(post))
-      .catch(err => console.log(err));
-      return () => isMounted.current = true;
-  }
-
-  const dateFormat = () => {
-    console.log(post.title)
-      // switch() {
-      //   case x:
-      //     // code block
-      //     break;
-      //   case y:
-      //     // code block
-      //     break;
-      //   default:
-      //     // code block
-      // }
+  const textFormatter = text => {
+    return text.replace(/(?:\r\n|\r|\n)/g, '<br />').replace(/  /g, "    \u00a0    ");
   }
 
   return (
@@ -42,11 +41,9 @@ export default function Post(props) {
               {post.created_at}
             </i>
             <h2>{post.location}</h2>
-            <p>{post.body1}</p>
-            <p>{post.body2}</p>
-            <p>{post.body3}</p>
-            <p>{post.body4}</p>
-            <p>{post.body5}</p>
+            {body.split('<br />').map((item, key) => {
+              return <p key={key}>{item}<br/></p>
+            })}
           </div>
         </div>
       }

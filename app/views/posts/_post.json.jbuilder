@@ -1,4 +1,4 @@
-json.extract! post, :id, :title, :longitude, :miles, :latitude, :location, :images, :body1, :body2, :body3, :body4, :body5, :created_at, :updated_at
+json.extract! post, :id, :title, :longitude, :miles, :latitude, :location, :images, :body, :created_at, :updated_at
 
 if post.images.attached?
   post.images.each do |i|

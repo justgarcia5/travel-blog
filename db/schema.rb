@@ -38,11 +38,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_193442) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.text "body1"
-    t.text "body2"
-    t.text "body3"
-    t.text "body4"
-    t.text "body5"
+    t.text "body"
     t.string "miles"
     t.string "location"
     t.float "latitude"

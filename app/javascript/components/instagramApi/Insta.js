@@ -6,31 +6,30 @@ import Feed from './Feed'
 
 const Insta = ({ ...props }) => {
   const [feeds, setFeedsData] = useState([])
-  //use useRef to store the latest value of the prop without firing the effect
   const tokenProp = useRef(props.instaToken);
   tokenProp.current = props.instaToken;
+  const [visible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // this is to avoid memory leaks
-    const abortController = new AbortController();
+    let cancel = false;
+
     async function fetchInstagramPost() {
       try {
         axios
           .get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${props.instaToken}`)
           .then((resp) => {
-            setFeedsData(resp.data.data)
+            if(cancel) return;
+            setFeedsData(resp.data.data);
+            setIsVisible(false);
           })
       } catch (err) {
-        console.log('error', err)
+        console.log('error', err);
       }
     }
 
     fetchInstagramPost();
 
-    return () => {
-      // cancel pending fetch request on component unmount
-      abortController.abort();
-    };
+    return () => cancel = true;
   }, [props.limit])
 
   return (
