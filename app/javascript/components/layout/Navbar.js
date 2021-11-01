@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import M from  'materialize-css/dist/js/materialize.min.js';
-
 import useDocumentScrollThrottled from '../functions/useDocumentScrollThrottled';
-
-
 
 export default function Navbar() {
   const [shouldHideHeader, setShouldHideHeader] = useState(false);
